@@ -21,18 +21,13 @@
   "repository": {
     "url": "https://github.com/aheckmann/node-ses.git"
   },
-  "scripts": {
-    "test": "mocha --reporter list",
-    "jshint": "jshint lib/*.js test/*.js"
-  },
+  "scripts": {},
   "dependencies": {
     "aws4": "1.9.1",
     "debug": "^2.6.9",
-    "request": "2.88.2",
-    "xml2js": "^0.4.19"
+    "got": "^11.8.3"
   },
   "devDependencies": {
-    "@types/request": "^2.48.1",
     "jshint": "^2.8.0",
     "mocha": "*"
   },

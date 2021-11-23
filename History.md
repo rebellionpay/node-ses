@@ -1,3 +1,7 @@
+4.0.0 / 2021-11-23
+==================
+- Add async methods
+- Change request module use for got.
 
 3.0.2 / 2020-05-04
 ==================

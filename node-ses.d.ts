@@ -1,5 +1,3 @@
-import { Response } from "request";
-
 declare module "node-ses" {
   export type Emails = string | string[];
   export interface MessageTag {
@@ -25,34 +23,9 @@ declare module "node-ses" {
     from: string;
     rawMessage: string;
   }
-  export interface SendEmailResult {
-    MessageId: string;
-  }
-  export interface ResponseMetadata {
-    RequestId: string;
-  }
-  export interface SendEmailResponse {
-    SendEmailResult: SendEmailResult;
-    ResponseMetadata: ResponseMetadata;
-  }
-  export interface SendEmailData {
-    SendEmailResponse: SendEmailResponse;
-  }
-  export interface SendEmailError {
-    Type: string;
-    Code: string;
-    Message: string;
-    Detail?: string;
-  }
-  export type Callback = (
-    error: SendEmailError,
-    data: SendEmailData,
-    response: Response
-  ) => any;
   export interface Client {
-    sendEmail(options: sendEmailOptions, callback: Callback): void;
-    sendemail(options: sendEmailOptions, callback: Callback): void;
-    sendRawEmail(options: sendRawEmailOptions, callback: Callback): void;
+    asyncSendEmail(options: sendEmailOptions): Promise<string>;
+    sendRawEmail(options: sendRawEmailOptions): Promise<string>;
   }
   export function createClient({
     key,
