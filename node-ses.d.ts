@@ -25,7 +25,7 @@ declare module "node-ses" {
   }
   export interface Client {
     asyncSendEmail(options: sendEmailOptions): Promise<string>;
-    sendRawEmail(options: sendRawEmailOptions): Promise<string>;
+    asyncSendRawEmail(options: sendRawEmailOptions): Promise<string>;
   }
   export function createClient({
     key,
